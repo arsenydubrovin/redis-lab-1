@@ -1,0 +1,10 @@
+{
+  "name": "text-formatter",
+  "outputfilename": "text-formatter",
+  "frontend:install": "",
+  "frontend:build": "",
+  "author": {
+    "name": "",
+    "email": ""
+  }
+}
