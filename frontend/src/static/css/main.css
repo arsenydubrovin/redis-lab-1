@@ -1,3 +1,94 @@
-div {
-	/*	background: rgb(23, 23, 223, 0.05);*/
+div,
+form,
+p {
+/* Highlight */
+/*	background: rgb(23, 23, 223, 0.05);*/
+}
+
+body {
+	font-family: "PT Root UI";
+	font-weight: 550;
+}
+
+label {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+input,
+select {
+	height: 30px;
+}
+
+input,
+select,
+textarea {
+	border-radius: 3px;
+	padding: 2px 6px 6px 6px;
+	border: none;
+	background-color: rgb(235, 240, 240)
+}
+
+::placeholder {
+	color: hsl(0, 100%, 0%, 0.4);
+}
+
+textarea {
+	resize: none;
+	width: 100%;
+	height: 140px;
+}
+
+input[type="button"] {
+	margin-top: 8px;
+	background-color: hsl(112, 37%, 35%);
+	color: #fff;
+}
+
+input[type="button"]:hover {
+	background-color: hsl(112, 37%, 33%);
+	color: #fafafa;
+}
+
+.app-size {
+	width: 600px;
+	height: 356px;
+	border: #000 solid 1px;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	padding: 10px 3%;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.column {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.error {
+	color: hsl(16, 100%, 35%)
+}
+
+#user-text {
+	height: 100%;
+	line-height: 1;
+	font-weight: normal;
+
+	font-family: Helvetica;
+	font-size: 55px;
+	font-style: italic;
+	color: darkgoldenrod;
 }
