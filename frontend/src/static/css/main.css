@@ -50,12 +50,6 @@ input[type="button"]:hover {
 	color: #fafafa;
 }
 
-.app-size {
-	width: 600px;
-	height: 356px;
-	border: #000 solid 1px;
-}
-
 .main {
 	width: 100%;
 	height: 100%;
