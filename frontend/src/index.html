@@ -5,27 +5,42 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, Chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
-    <!-- Main Source Files -->
-    <link rel="stylesheet" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="static/css/reset-min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <script src="static/js/main.js"></script>
 </head>
 
-<body id="app" class="app">
-    <header>
-        <!--  -->
-    </header>
-    <main>
-        <div class="logo"></div>
-        <div class="result" id="result">Please enter your name below 👇</div>
-        <div class="input-box" id="input">
-            <input class="input" id="name" type="text" autocomplete="off" onkeydown="if (event.keyCode === 13) {greet()}" />
-            <button class="btn" onclick="greet()">Greet</button>
+<body>
+    <div class="app-size">
+        <div class="main">
+            <form method="post" class="column settings-container">
+                <div class="wrapper">
+                    <label for="user">Пользователь</label>
+                    <select name="user">
+                        <option value="user_1">user_1</option>
+                        <option value="user_2">user_2</option>
+                    </select>
+                </div>
+                <div class="wrapper">
+                    <label for="text">Текст</label>
+                    <input id="text-input" type="text" name="text" placeholder="Например: привет, мир" required>
+                </div>
+                <div class="wrapper big-input">
+                    <label for="styles">Стили текста</label>
+                    <textarea rows="5" cols="10" id="styles" name="styles"
+                        placeholder="font-family, font-size, color, font-style"></textarea>
+                </div>
+                <div class="wrapper button">
+                    <input type="button" value="Сохранить">
+                </div>
+            </form>
+
+            <div class="column">
+                <label>Результат</label>
+                <p id="user-text"></p>
+            </div>
         </div>
-    </main>
-    <footer>
-        <!--  -->
-    </footer>
+    </div>
 </body>
 
 </html>
