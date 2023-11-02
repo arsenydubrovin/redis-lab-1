@@ -5,12 +5,16 @@ p {
 	/*	background: rgb(23, 23, 223, 0.05);*/
 }
 
-/*Disable scrolling*/
+/*Disable selecting and scrolling*/
 html,
 body {
 	margin: 0;
 	height: 100%;
-	overflow: hidden
+	overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -50,7 +54,7 @@ textarea {
 
 input[type="number"],
 select {
-	max-width: 70%;
+	max-width: 80%;
 	padding: 2px 6px 6px 6px;
 }
 
