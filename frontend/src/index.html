@@ -11,34 +11,53 @@
 </head>
 
 <body>
-        <div class="main">
-            <form method="post" class="column">
-                <div class="wrapper">
-                    <label for="user">Пользователь</label>
-                    <select name="user">
-                        <option value="user_1">user_1</option>
-                        <option value="user_2">user_2</option>
-                    </select>
-                </div>
-                <div class="wrapper">
-                    <label for="text">Текст</label>
-                    <input id="text-input" type="text" name="text" placeholder="Например: привет, мир" required>
-                </div>
-                <div class="wrapper">
-                    <label for="styles">Стили</label>
-                    <textarea rows="5" cols="10" id="styles" name="styles"
-                        placeholder="font-family, font-size, color, font-style"></textarea>
-                </div>
-                <div class="wrapper">
-                    <input type="button" value="Сохранить">
-                </div>
-            </form>
-
-            <div class="column">
-                <label>Результат</label>
-                <p id="user-text"></p>
+    <div class="main">
+        <form method="post" class="column">
+            <div class="wrapper">
+                <label for="user">Пользователь</label>
+                <select name="user">
+                    <option value="user_1">user_1</option>
+                    <option value="user_2">user_2</option>
+                </select>
             </div>
+            <div class="wrapper">
+                <label for="text">Текст</label>
+                <textarea rows="2" cols="10" id="styles" name="styles" placeholder="Например: привет, мир"></textarea>
+            </div>
+            <div class="wrapper">
+                <label for="font">Шрифт</label>
+                <select name="font">
+                    <option value="font_1">Шрифт 1</option>
+                    <option value="font_2">Шрифт 2</option>
+                </select>
+            </div>
+            <div class="wrapper">
+                <label for="size">Кегль</label>
+                <input id="size-input" type="number" name="size" min="1" max="200" pattern="\d*" required>
+            </div>
+            <div class="wrapper">
+                <label for="color">Цвет</label>
+                <input id="color-input" type="color" name="color" value="#000000" required>
+            </div>
+            <div class="wrapper">
+                <label for="font">Начертание</label>
+                <select name="font">
+                    <option value="normal">Обычный</option>
+                    <option value="italic">Курсив</option>
+                    <option value="bold">Жирный</option>
+                </select>
+            </div>
+
+            <div class="wrapper">
+                <input type="button" value="Сохранить">
+            </div>
+        </form>
+
+        <div class="column">
+            <label>Результат</label>
+            <p id="user-text"></p>
         </div>
+    </div>
 </body>
 
 </html>
