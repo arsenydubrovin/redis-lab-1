@@ -6,8 +6,9 @@ p {
 }
 
 body {
+	background: #fff;
 	font-family: "PT Root UI";
-	font-weight: 550;
+	font-weight: 500;
 }
 
 label {
