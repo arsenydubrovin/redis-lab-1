@@ -15,18 +15,18 @@
         <form method="post" class="column">
             <div class="wrapper">
                 <label for="user">Пользователь</label>
-                <select name="user">
+                <select id="user-select" name="user">
                     <option value="user_1">user_1</option>
                     <option value="user_2">user_2</option>
                 </select>
             </div>
             <div class="wrapper">
                 <label for="text">Текст</label>
-                <textarea rows="2" cols="10" id="styles" name="styles" placeholder="Например: привет, мир"></textarea>
+                <textarea rows="2" cols="10" id="text-input" name="text" placeholder="Например: привет, мир"></textarea>
             </div>
             <div class="wrapper">
                 <label for="font">Шрифт</label>
-                <select name="font">
+                <select name="font" id="font-select">
                     <option value="font_1">Шрифт 1</option>
                     <option value="font_2">Шрифт 2</option>
                 </select>
@@ -37,11 +37,11 @@
             </div>
             <div class="wrapper">
                 <label for="color">Цвет</label>
-                <input id="color-input" type="color" name="color" value="#000000" required>
+                <input id="color-select" type="color" name="color" value="#000000" required>
             </div>
             <div class="wrapper">
-                <label for="font">Начертание</label>
-                <select name="font">
+                <label for="style">Начертание</label>
+                <select name="style" id="style-select" >
                     <option value="normal">Обычный</option>
                     <option value="italic">Курсив</option>
                     <option value="bold">Жирный</option>
