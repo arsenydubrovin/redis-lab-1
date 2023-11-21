@@ -1,15 +1,44 @@
-//Global JS function for greeting
-function greet() {
-    //Get user input
-    let inputName = document.getElementById("name").value;
+// Global objects for storing application settings received from backend
+var defaultFontList
+var defaultUserList
 
-    //Call Go Greet function
-    window.go.main.App.Greet(inputName).then(result => {
-        //Display result from Go
-        document.getElementById("result").innerHTML = result;
-    }).catch(err => {
-        console.log(err);
-    }).finally(() => {
-        console.log("finished!")
-    });
+window.onload = async function () {
+    defaultUserList = await getDefaultUserList()
+    defaultFontList = await getDefaultFontList()
+    createUserSelectOptions()
+    createFamilySelectOptions()
+    updateText()
+}
+
+document.getElementById("user-select").onchange = (selectedOption) => {
+    loadUserSettings(selectedOption.target.value)
+}
+
+document.getElementById("text-input").oninput = () => {
+    updateText()
+}
+
+document.getElementById("family-select").onchange = () => {
+    updateTextStyles()
+}
+
+document.getElementById("size-input").oninput = () => {
+    updateTextStyles()
+    // restrictNumberInput()
+}
+
+// document.getElementById("size-input").focusout = () => {
+//     restrictSizeRange()
+// }
+
+document.getElementById("color-select").onchange = () => {
+    updateTextStyles()
+}
+
+document.getElementById("style-select").onchange = () => {
+    updateTextStyles()
+}
+
+document.getElementById("save").onclick = () => {
+    updateUserSettings()
 }
