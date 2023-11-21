@@ -1,0 +1,6 @@
+#!/bin/sh
+# script/run: build application
+
+set -e
+
+wails build

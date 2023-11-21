@@ -1,0 +1,6 @@
+#!/bin/sh
+# script/run: run wails in dev mode
+
+set -e
+
+wails dev -browser

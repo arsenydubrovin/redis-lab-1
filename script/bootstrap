@@ -1,0 +1,6 @@
+#!/bin/sh
+# script/bootstrap: resolve all dependencies
+
+set -e
+
+go mod download
