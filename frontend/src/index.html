@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="static/css/reset-min.css" />
     <link rel="stylesheet" href="static/css/main.css" />
-    <script src="static/js/main.js"></script>
 </head>
 
 <body>
@@ -16,20 +15,15 @@
             <div class="wrapper">
                 <label for="user">Пользователь</label>
                 <select id="user-select" name="user">
-                    <option value="user_1">user_1</option>
-                    <option value="user_2">user_2</option>
                 </select>
             </div>
             <div class="wrapper">
                 <label for="text">Текст</label>
-                <textarea rows="2" cols="10" id="text-input" name="text" placeholder="Например: привет, мир"></textarea>
+                <textarea rows="2" cols="10" id="text-input" name="text" spellcheck="false" autocomplete="off" placeholder="Например: привет, мир"></textarea>
             </div>
             <div class="wrapper">
                 <label for="family">Шрифт</label>
                 <select name="family" id="family-select">
-                    <option value="helvetica">Helvetica</option>
-                    <option value="new_york">New York</option>
-                    <option value="source_code">Source Code</option>
                 </select>
             </div>
             <div class="wrapper">
@@ -42,7 +36,7 @@
             </div>
             <div class="wrapper">
                 <label for="style">Начертание</label>
-                <select name="style" id="style-select" >
+                <select name="style" id="style-select">
                     <option value="normal">Обычный</option>
                     <option value="italic">Курсив</option>
                     <option value="bold">Жирный</option>
@@ -50,15 +44,18 @@
             </div>
 
             <div class="wrapper">
-                <input type="button" value="Сохранить">
+                <input type="button" value="Сохранить" id="save">
             </div>
         </form>
 
         <div class="column">
             <label>Результат</label>
-            <p id="user-text"></p>
+            <p id="displayed-text"></p>
         </div>
     </div>
+<script src="/static/js/frontend.js"></script>
+    <script src="/static/js/backend.js"></script>
+    <script src="/static/js/main.js"></script>
 </body>
 
 </html>
