@@ -2,12 +2,18 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"log"
+
+	"github.com/redis/go-redis/v9"
 )
 
 // App struct
 type App struct {
-	ctx context.Context
+	ctx             context.Context
+	redisClient     *redis.Client
+	defaultUserList [2]string
+	defaultSettings map[string]string
+	defaultFontList map[string]string
 }
 
 // NewApp creates a new App application struct
@@ -17,8 +23,30 @@ func NewApp() *App {
 
 // startup is called at application startup
 func (a *App) startup(ctx context.Context) {
-	// Perform your setup here
 	a.ctx = ctx
+
+	// Default application settings
+	a.defaultUserList = [2]string{"user_1", "user_2"}
+	a.defaultSettings = map[string]string{
+		"fontFamily": "helvetica",
+		"fontSize":   "16",
+		"fontStyle":  "normal",
+		"fontColor":  "#000000",
+	}
+	a.defaultFontList = map[string]string{
+		"helvetica":   "Helvetica",
+		"new_york":    "New York",
+		"source_code": "Source Code Pro",
+	}
+
+	err := a.connectToDB()
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	a.createDefaultUsers()
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 }
 
 // domReady is called after front-end resources have been loaded
@@ -36,9 +64,4 @@ func (a *App) beforeClose(ctx context.Context) (prevent bool) {
 // shutdown is called at application termination
 func (a *App) shutdown(ctx context.Context) {
 	// Perform your teardown here
-}
-
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
 }

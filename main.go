@@ -23,12 +23,12 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:             "text-formatter",
-		Width:             1024,
-		Height:            768,
-		MinWidth:          1024,
-		MinHeight:         768,
-		DisableResize:     false,
+		Title:             "Text formatter",
+		Width:             650,
+		Height:            430,
+		MinWidth:          600,
+		MinHeight:         356,
+		DisableResize:     true,
 		Fullscreen:        false,
 		Frameless:         false,
 		StartHidden:       false,
@@ -57,24 +57,23 @@ func main() {
 		// Mac platform specific options
 		Mac: &mac.Options{
 			TitleBar: &mac.TitleBar{
-				TitlebarAppearsTransparent: true,
+				TitlebarAppearsTransparent: false,
 				HideTitle:                  false,
 				HideTitleBar:               false,
 				FullSizeContent:            false,
 				UseToolbar:                 false,
-				HideToolbarSeparator:       true,
+				HideToolbarSeparator:       false,
 			},
-			Appearance:           mac.NSAppearanceNameDarkAqua,
+			Appearance:           mac.DefaultAppearance,
 			WebviewIsTransparent: true,
 			WindowIsTranslucent:  true,
 			About: &mac.AboutInfo{
-				Title:   "text-formatter",
+				Title:   "Text formatter",
 				Message: "",
 				Icon:    icon,
 			},
 		},
 	})
-
 	if err != nil {
 		log.Fatal(err)
 	}
