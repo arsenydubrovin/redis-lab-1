@@ -1,4 +1,4 @@
-module dev.cs.petrsu.ru/dubrovin/text-formatter
+module github.com/arsenydubrovin/redis-lab-1
 
 go 1.21.0
 
